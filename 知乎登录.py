@@ -44,6 +44,7 @@ def get_captcha():
         f.write(r.content)
     captcha = input("验证码：")
     return captcha
+
 def login(email, password):
     login_url = 'https://www.zhihu.com/login/email'
     data = {
