@@ -7,7 +7,6 @@ import time
 from http import  cookiejar
 import requests
 from bs4 import BeautifulSoup
-
 headers = {
     "Host": "www.zhihu.com",
     "Referer": "https://www.zhihu.com/",
@@ -54,16 +53,12 @@ def login(email, password):
         "captcha": get_captcha(),
         'remember_me': 'true'}
     response = session.post(login_url, data=data, headers=headers)
-    login_code = response.json()
-    print(login_code['msg'])
-    for i in session.cookies:
-        print(i)
     session.cookies.save()
 
 
 if __name__ == '__main__':
-    email = "xxxx"
-    password = "xxxxx"
+    email = "1647882779@qq.com"
+    password = "u3697ba2"
     login(email, password)
 
 
